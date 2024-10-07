@@ -6,6 +6,8 @@ def search_lyrics(banda, music):
     endpoint = f'https://api.lyrics.ovh/v1/{banda}/{music}'
     response = requests.get(endpoint)
     return response.json()['lyrics'] if response.status_code == 200 else ''
+
+
 st.title('Music lyrics')
 banda = st.text_input('Artist name or band name:', key = 'banda')
 music = st.text_input('Music name', key='music')
